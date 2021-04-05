@@ -1,5 +1,3 @@
-import Discord from 'discord.js';
-import config from 'config';
 import { getPictures, clearPicsArray } from './searching.js';
 import fsExtra from 'fs-extra';
 import path from 'path';
@@ -10,7 +8,10 @@ const searchPictures = async (bot, msg, args) => {
     try {
         msg.channel.send('Бот ищет картинки по вашему запросу. Это может занять пару минут');
 
-        const countOfPictures = await getPictures(args[1]);
+        const queryArray = args.slice(1, args.length);
+        const queryString = queryArray.join(' ');
+
+        const countOfPictures = await getPictures(queryString);
 
         for (let i = 0; i < countOfPictures; i++) {
             msg.channel.send('-', { files: [path.resolve(__dirname, 'images', `img_${i}.png`)] });

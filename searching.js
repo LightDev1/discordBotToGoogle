@@ -7,7 +7,7 @@ const __dirname = path.resolve();
 let picturesArray = [];
 
 export const getPictures = async (query) => {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
     await page.setDefaultNavigationTimeout(0);

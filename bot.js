@@ -17,7 +17,7 @@ client.on('message', msg => {
         const command = msg.content.trim() + ' ';
         const commandName = command.slice(0, command.indexOf(' '));
         const messageArray = command.split(' ');
-        console.log(messageArray);
+
         for (let i = 0; i < commands.length; i++) {
             const prefix = config.get('prefix');
             const commandTemp = prefix + commands[i].name;
