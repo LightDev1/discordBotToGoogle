@@ -12,6 +12,8 @@ client.on('ready', () => {
     console.log('Ссылка-приглашение: ', 'https://discord.com/api/oauth2/authorize?client_id=828292696807440385&permissions=2054&scope=bot');
 });
 
+//для гитхаба
+
 client.on('message', msg => {
     if (msg.author.username !== client.user.username && msg.author.discriminator !== client.user.discriminator) {
         const command = msg.content.trim() + ' ';

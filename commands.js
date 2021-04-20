@@ -30,6 +30,6 @@ export const commands = [
     {
         name: 'search',
         out: searchPictures,
-        about: 'Команда для поиска картинок в яндекс',
+        about: 'Команда для поиска картинок в яндексе',
     }
-]
+];
